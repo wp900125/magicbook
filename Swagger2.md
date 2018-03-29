@@ -99,9 +99,10 @@ public class UserController {
 
 }
 ```
-访问：http://localhost:8080/swagger-ui.html。就能看到前文所展示的RESTful API的页面。
+访问：http://localhost:8080/swagger-ui.html  就能看到前文所展示的RESTfulAPI的页面。
 ## insight
 
 ## reference
 [Spring Boot中使用Swagger2构建强大的RESTful API文档](http://blog.didispace.com/springbootswagger2/)
+
 [Swagger官网](https://swagger.io/)
