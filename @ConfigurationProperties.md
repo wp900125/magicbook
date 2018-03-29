@@ -2,6 +2,9 @@
 ## concept
 把properties或者yml配置直接转成对象
 
+## tags
+`annotation`
+
 ## demo
 ```
 server:  
