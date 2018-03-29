@@ -2,6 +2,9 @@
 ## concept
 返回json,是@ResponseBody和@Controller的组合注解
 
+## tags
+`annotation`
+
 ## demo
 ```java
 @RestController
