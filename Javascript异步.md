@@ -26,14 +26,45 @@ function f1(){
 ```
 * 发布/订阅
 ```js
-f1.on('done', f2);
+jQuery.subscribe("done", f2);
 
 function f1(){
-　　　　setTimeout(function () {
-　　　　　　// f1的任务代码
-　　　　　　f1.trigger('done');
-　　　　}, 1000);
-　　}
+  setTimeout(function () {
+    // f1的任务代码
+    jQuery.publish("done");
+  }, 1000);
+}
+
+jQuery.unsubscribe("done", f2);
+```
+发布/订阅的一种实现
+```js
+(function($) {
+  var o = $({});
+  $.subscribe = function() {
+    o.on.apply(o, arguments);
+  };
+  $.unsubscribe = function() {
+    o.off.apply(o, arguments);
+  };
+  $.publish = function() {
+    o.trigger.apply(o, arguments);
+  };
+}(jQuery));
+```
+* Promises对象
+```js
+function f1(){
+  var dfd = $.Deferred();
+  setTimeout(function () {
+    // f1的任务代码
+    dfd.resolve();
+  }, 500);
+  return dfd.promise;
+}
+  
+f1().then(f2).then(f3);
+f1().then(f2).fail(f3);
 ```
 
 ## insight
